@@ -13,6 +13,15 @@ import {
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { MapContainer, TileLayer, GeoJSON, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
+
+// Fix for default marker icon issue in production
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: '/leaflet/marker-icon-2x.png',
+  iconUrl: '/leaflet/marker-icon.png',
+  shadowUrl: '/leaflet/marker-shadow.png',
+});
 
 // Register ChartJS components
 ChartJS.register(
@@ -33,7 +42,6 @@ const Datum = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [mapData, setMapData] = useState(null);
-  const [purchasedGrids, setPurchasedGrids] = useState([]);
   const [accessChecked, setAccessChecked] = useState(false);
 
   // Check user access
@@ -58,7 +66,6 @@ const Datum = () => {
         }
 
         const data = await response.json();
-        setPurchasedGrids(data.purchasedGrids || []);
         
         // Check if user has purchased this grid
         if (!data.purchasedGrids.includes(String(gridId))) {
@@ -168,10 +175,6 @@ const Datum = () => {
   }
 
   return (
-    <div 
-      className="min-h-screen bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url('/datumbackground.png')` }}
-    >
       <div className="flex flex-col min-h-screen">
         <main className="flex-1 flex flex-col items-stretch">
           <div className="container mx-auto px-4 py-32">
@@ -326,7 +329,6 @@ const Datum = () => {
           </div>
         </main>
       </div>
-    </div>
   );
 };
 

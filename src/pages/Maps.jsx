@@ -161,17 +161,17 @@ export default function MapsPage() {
     const gridId = feature.properties.GRID_ID;
     gridLayersRef.current[gridId] = layer;
     
-    const msl = feature.properties.MSL || 'N/A';
     const availableDatums = countAvailableDatums(feature.properties);
     const gridIdString = String(gridId); // Ensure grid ID is a string for comparison
+    const area = Number(gridId) <= 94 ? 'OSES' : 'ONWJ'; // Determine area based on GRID_ID
     
     // Create popup content using the CURRENT state of purchasedGrids
     const createPopupContent = (isPurchased) => `
       <div class="p-4">
         <h3 class="font-bold mb-2">Grid Information</h3>
         <p class="mb-2 font-medium">Grid ID: ${gridId}</p>
+        <p class="mb-1 font-medium">Area: ${area}</p>
         <div class="space-y-1">
-          <p class="mb-1 font-medium">MSL: ${msl}</p>
           <p class="mb-1 font-medium">Available Datums: ${availableDatums}/5</p>
           ${isPurchased ? 
             `<p class="text-sm text-green-600 font-semibold">Access Available</p>` :
@@ -290,17 +290,17 @@ export default function MapsPage() {
     } else {
       // Create popup content for grid area
       const gridId = grid.properties.GRID_ID;
-      const msl = grid.properties.MSL || 'N/A';
       const availableDatums = countAvailableDatums(grid.properties);
       const gridIdString = String(gridId);
       const isPurchased = purchasedGrids.includes(gridIdString);
+      const area = Number(gridId) <= 94 ? 'OSES' : 'ONWJ'; // Determine area based on GRID_ID
 
       popupContent = `
         <div class="p-4">
           <h3 class="font-bold mb-2">Grid Information</h3>
           <p class="mb-2 font-medium">Grid ID: ${gridId}</p>
+          <p class="mb-1 font-medium">Area: ${area}</p>
           <div class="space-y-1">
-            <p class="mb-1 font-medium">MSL: ${msl}</p>
             <p class="mb-1 font-medium">Available Datums: ${availableDatums}/5</p>
             ${isPurchased ? 
               `<p class="text-sm text-green-600 font-semibold">Access Available</p>` :
@@ -364,17 +364,17 @@ export default function MapsPage() {
           `;
         } else {
           const gridId = grid.properties.GRID_ID;
-          const msl = grid.properties.MSL || 'N/A';
           const availableDatums = countAvailableDatums(grid.properties);
           const gridIdString = String(gridId);
           const isPurchased = purchasedGrids.includes(gridIdString);
+          const area = Number(gridId) <= 94 ? 'OSES' : 'ONWJ'; // Determine area based on GRID_ID
           
           popupContent = `
             <div class="p-4">
               <h3 class="font-bold mb-2">Grid Information</h3>
               <p class="mb-2 font-medium">Grid ID: ${gridId}</p>
+              <p class="mb-1 font-medium">Area: ${area}</p>
               <div class="space-y-1">
-                <p class="mb-1 font-medium">MSL: ${msl}</p>
                 <p class="mb-1 font-medium">Available Datums: ${availableDatums}/5</p>
                 ${isPurchased ? 
                   `<p class="text-sm text-green-600 font-semibold">Access Available</p>` :

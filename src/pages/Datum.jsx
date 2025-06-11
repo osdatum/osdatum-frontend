@@ -2,6 +2,16 @@ import React, { useState, useEffect, useRef } from 'react';
 import { MapContainer, TileLayer, GeoJSON, Marker, Popup, useMap } from 'react-leaflet';
 import { useSearchParams, useNavigate, Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import L from 'leaflet'; // Import Leaflet library
+import 'leaflet/dist/leaflet.css'; // Ensure Leaflet CSS is imported
+
+// Fix for default marker icon issue in production
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: '/leaflet/marker-icon-2x.png',
+  iconUrl: '/leaflet/marker-icon.png',
+  shadowUrl: '/leaflet/marker-shadow.png',
+});
 
 export default function DatumCopyPage() {
   const [data, setData] = useState(null);
@@ -278,7 +288,7 @@ export default function DatumCopyPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 px-18">
+    <div className="min-h-screen bg-gray-100 px-4 md:px-18">
       <div className="container mx-auto px-4 py-10">
         <div className="flex justify-between items-center mb-8">
           <div>

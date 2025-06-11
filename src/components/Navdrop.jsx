@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaBars, FaTimes, FaSignInAlt } from "react-icons/fa";
 
@@ -11,6 +11,12 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const [scroll, setScroll] = useState(false);
+  const menuOpenRef = useRef(menuOpen); // Create a ref to store the current state of menuOpen
+
+  // Update the ref whenever menuOpen changes
+  useEffect(() => {
+    menuOpenRef.current = menuOpen;
+  }, [menuOpen]);
 
   // Function to update user data from localStorage
   const updateUserData = () => {
@@ -44,16 +50,25 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
+    const handleScroll = () => {
       if (window.scrollY > 5) {
         setScroll(true);
-        setServicesDropdownOpen(false);
-        setProfileDropdownOpen(false);
+        // Only close dropdowns if the mobile menu is NOT open
+        if (!menuOpen) {
+          setServicesDropdownOpen(false);
+          setProfileDropdownOpen(false);
+        }
       } else {
         setScroll(false);
       }
-    });
-  });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [menuOpen]); // Add menuOpen to the dependency array to get the latest state
 
   let scrollActive = scroll ? "py-6 bg-white shadow" : "py-6";
 
@@ -120,7 +135,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`navbar fixed w-full px-18 transition-all bg-gradient-to-r from-[#0b2a5c] to-[#203b77] z-100 ${scrollActive}`}>
+    <nav className={`navbar fixed w-full px-4 transition-all bg-gradient-to-r from-[#0b2a5c] to-[#203b77] z-100 ${scrollActive} md:px-18`}>
       <div className="container mx-auto flex justify-between items-center px-3">
         {/* Logo */}
         <Link to="/" className="flex items-center">
@@ -237,7 +252,10 @@ const Navbar = () => {
           <li>
             <button 
               className="block py-2 w-full" 
-              onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setServicesDropdownOpen(!servicesDropdownOpen);
+              }}
             >
               Services ▾
             </button>

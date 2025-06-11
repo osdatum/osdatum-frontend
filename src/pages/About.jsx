@@ -11,7 +11,7 @@ const About = () => {
             </div>
           </section>
 
-          <section className="py-16 px-18">
+          <section className="py-16 px-4 md:px-18">
             <div className="mx-auto grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl font-bold mb-4">About OSDATUM</h2>
@@ -39,7 +39,7 @@ const About = () => {
           </section>
 
           {/* Team Section */}
-          <section className="py-16 px-18">
+          <section className="py-16 px-4 md:px-18">
             {/* Title Section */}
             <div>
               <h2 className="text-3xl md:text-5xl font-bold mb-4 text-center">Our Development Team</h2>
@@ -54,7 +54,7 @@ const About = () => {
                       <img
                         src="/shafa.png"
                         alt="Shafa"
-                        className="w-32 h-32 rounded-full object-cover mb-4"
+                        className="w-full h-full object-cover"
                       />
                     </div>
                     <h3 className="text-xs md:text-sm font-semibold mb-1 text-center">Shafa Nur Hafizah</h3>
@@ -67,7 +67,7 @@ const About = () => {
                       <img
                         src="/agung.png"
                         alt="Agung"
-                        className="w-32 h-32 rounded-full object-cover mb-4"
+                        className="w-full h-full object-cover"
                       />
                     </div>
                     <h3 className="text-xs md:text-sm font-semibold mb-1 text-center">Moch. Agung P. Wibowo</h3>
@@ -80,7 +80,7 @@ const About = () => {
                       <img
                         src="/nadine.png"
                         alt="Nadine"
-                        className="w-32 h-32 rounded-full object-cover mb-4"
+                        className="w-full h-full object-cover"
                       />
                     </div>
                     <h3 className="text-xs md:text-sm font-semibold mb-1 text-center">Daiva Nadine Pratiwi</h3>
@@ -93,7 +93,7 @@ const About = () => {
                       <img
                         src="/adhima.png"
                         alt="Adhima"
-                        className="w-32 h-32 rounded-full object-cover mb-4"
+                        className="w-full h-full object-cover"
                       />
                     </div>
                     <h3 className="text-xs md:text-sm font-semibold mb-1 text-center">Adhima Al Azmy</h3>
@@ -106,7 +106,7 @@ const About = () => {
                       <img
                         src="/atha.png"
                         alt="Atha"
-                        className="w-32 h-32 rounded-full object-cover mb-4"
+                        className="w-full h-full object-cover"
                       />
                     </div>
                     <h3 className="text-xs md:text-sm font-semibold mb-1 text-center">Atha Helmizahran</h3>
