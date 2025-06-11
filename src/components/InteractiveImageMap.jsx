@@ -1,8 +1,4 @@
 import { useState } from 'react';
-import sumatraImage from '../assets/images/sumatra.png';
-import javaImage from '../assets/images/java.png';
-import osesImage from '../assets/images/OSES.png';
-import onwjImage from '../assets/images/ONWJ.png';
 const InteractiveImageMap = () => {
   const [hoveredArea, setHoveredArea] = useState(null);
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
@@ -10,7 +6,7 @@ const InteractiveImageMap = () => {
   const areas = [
     {
       id: 'oses',
-      image: osesImage,
+      image: '/OSES.png',
       link: '/services/map',
       position: {
         top: '45%',
@@ -23,7 +19,7 @@ const InteractiveImageMap = () => {
     },
     {
       id: 'onwj',
-      image: onwjImage,
+      image: '/ONWJ.png',
       link: '/services/map',
       position: {
         top: '55%',
@@ -36,7 +32,7 @@ const InteractiveImageMap = () => {
     },
     {
       id: 'sumatra',
-      image: sumatraImage,
+      image: '/sumatra.png',
       position: {
         top: '-100%',
         left: '-60%',
@@ -48,7 +44,7 @@ const InteractiveImageMap = () => {
     },
     {
       id: 'java',
-      image: javaImage,
+      image: '/java.png',
       position: {
         top: '60%',
         left: '22%',

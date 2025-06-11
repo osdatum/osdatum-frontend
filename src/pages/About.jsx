@@ -1,9 +1,4 @@
 import React from 'react'
-import shafa from "../assets/images/shafa.png"
-import agung from "../assets/images/agung.png"
-import nadine from "../assets/images/nadine.png"
-import adhima from "../assets/images/adhima.png"
-import atha from "../assets/images/atha.png"
 
 const About = () => {
   return (
@@ -56,7 +51,11 @@ const About = () => {
                   {/* Team Member 1 */}
                   <div className="flex flex-col items-center">
                     <div className="aspect-[4/5] w-36 md:w-50 mb-2 border border-gray-200 rounded-lg overflow-hidden bg-gray-100">
-                      <img src={shafa} alt="Shafa Nur Hafizah" className="w-full h-full object-cover" />
+                      <img
+                        src="/shafa.png"
+                        alt="Shafa"
+                        className="w-32 h-32 rounded-full object-cover mb-4"
+                      />
                     </div>
                     <h3 className="text-xs md:text-sm font-semibold mb-1 text-center">Shafa Nur Hafizah</h3>
                     <p className="text-gray-600 mb-1 text-[10px] md:text-xs text-center">Team Leader</p>
@@ -65,7 +64,11 @@ const About = () => {
                   {/* Team Member 2 */}
                   <div className="flex flex-col items-center">
                     <div className="aspect-[4/5] w-36 md:w-50 mb-2 border border-gray-200 rounded-lg overflow-hidden bg-gray-100">
-                      <img src={agung} alt="Moch. Agung P. Wibowo" className="w-full h-full object-cover" />
+                      <img
+                        src="/agung.png"
+                        alt="Agung"
+                        className="w-32 h-32 rounded-full object-cover mb-4"
+                      />
                     </div>
                     <h3 className="text-xs md:text-sm font-semibold mb-1 text-center">Moch. Agung P. Wibowo</h3>
                     <p className="text-gray-600 mb-1 text-[10px] md:text-xs text-center">Web Developer</p>
@@ -74,7 +77,11 @@ const About = () => {
                   {/* Team Member 3 */}
                   <div className="flex flex-col items-center">
                     <div className="aspect-[4/5] w-36 md:w-50 mb-2 border border-gray-200 rounded-lg overflow-hidden bg-gray-100">
-                      <img src={nadine} alt="Daiva Nadine Pratiwi" className="w-full h-full object-cover" />
+                      <img
+                        src="/nadine.png"
+                        alt="Nadine"
+                        className="w-32 h-32 rounded-full object-cover mb-4"
+                      />
                     </div>
                     <h3 className="text-xs md:text-sm font-semibold mb-1 text-center">Daiva Nadine Pratiwi</h3>
                     <p className="text-gray-600 mb-1 text-[10px] md:text-xs text-center">Data Processor</p>
@@ -83,7 +90,11 @@ const About = () => {
                   {/* Team Member 4 */}
                   <div className="flex flex-col items-center">
                     <div className="aspect-[4/5] w-36 md:w-50 mb-2 border border-gray-200 rounded-lg overflow-hidden bg-gray-100">
-                      <img src={adhima} alt="Adhima Al Azmy" className="w-full h-full object-cover" />
+                      <img
+                        src="/adhima.png"
+                        alt="Adhima"
+                        className="w-32 h-32 rounded-full object-cover mb-4"
+                      />
                     </div>
                     <h3 className="text-xs md:text-sm font-semibold mb-1 text-center">Adhima Al Azmy</h3>
                     <p className="text-gray-600 mb-1 text-[10px] md:text-xs text-center">Data Processor</p>
@@ -92,7 +103,11 @@ const About = () => {
                   {/* Team Member 5 */}
                   <div className="flex flex-col items-center">
                     <div className="aspect-[4/5] w-36 md:w-50 mb-2 border border-gray-200 rounded-lg overflow-hidden bg-gray-100">
-                      <img src={atha} alt="Atha Helmizahran" className="w-full h-full object-cover" />
+                      <img
+                        src="/atha.png"
+                        alt="Atha"
+                        className="w-32 h-32 rounded-full object-cover mb-4"
+                      />
                     </div>
                     <h3 className="text-xs md:text-sm font-semibold mb-1 text-center">Atha Helmizahran</h3>
                     <p className="text-gray-600 mb-1 text-[10px] md:text-xs text-center">Engineer</p>

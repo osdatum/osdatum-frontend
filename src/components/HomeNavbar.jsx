@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaBars, FaTimes, FaSignInAlt } from "react-icons/fa";
-import logo from "../assets/images/logo.png";
 
 const HomeNavbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -245,7 +244,7 @@ const HomeNavbar = () => {
       <div className="container mx-auto flex justify-between items-center px-3">
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <img src={logo} alt="OSDATUM Logo" className="h-8 w-auto" />
+          <img src="/logo.png" alt="OSDATUM Logo" className="h-8 w-auto" />
         </Link>
 
         {/* Desktop Menu */}

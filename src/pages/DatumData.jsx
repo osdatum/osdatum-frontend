@@ -11,7 +11,6 @@ import {
   Legend
 } from 'chart.js';
 import { useSearchParams, useNavigate } from 'react-router-dom';
-import datumBackground from '../assets/images/datumbackground.png';
 import { MapContainer, TileLayer, GeoJSON, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 
@@ -169,7 +168,10 @@ const Datum = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 px-18">
+    <div 
+      className="min-h-screen bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url('/datumbackground.png')` }}
+    >
       <div className="flex flex-col min-h-screen">
         <main className="flex-1 flex flex-col items-stretch">
           <div className="container mx-auto px-4 py-32">
@@ -200,7 +202,7 @@ const Datum = () => {
                   <div>
                     <h2 className="text-xl font-bold text-blue-900 mb-4">Datum Graph</h2>
                     <div className="relative h-[400px] w-full border-1 overflow-hidden" style={{
-                      backgroundImage: `url(${datumBackground})`,
+                      backgroundImage: `url('/datumbackground.png')`,
                       backgroundSize: 'cover',
                       backgroundPosition: 'center',
                       backgroundRepeat: 'no-repeat'

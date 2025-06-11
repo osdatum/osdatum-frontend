@@ -1,9 +1,5 @@
 import React from 'react';
-import heroImage from "../assets/images/heroImage.png";
 import InteractiveImageMap from "../components/InteractiveImageMap";
-import mapImage from "../assets/images/map.jpg";
-import datumImage from "../assets/images/datum.jpg";
-import heroImage2 from "../assets/images/heroImage2.png";
 import Wave from "../components/Wave.jsx";
 import HomeNavbar from '../components/HomeNavbar';
 import { useNavigate } from 'react-router-dom';
@@ -27,7 +23,7 @@ const Home = () => {
             </div>
 
             {/* Section Features */}
-            <div id="features" className="w-full min-h-screen bg-cover bg-top bg-no-repeat relative" style={{backgroundImage: `url(${heroImage})`}}>
+            <div id="features" className="w-full min-h-screen bg-cover bg-top bg-no-repeat relative" style={{backgroundImage: `url(/heroImage.png)`}}>
                 <div className="container mx-auto px-18 relative z-10 h-full flex items-center py-20 md:py-45">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 text-white">
                         <div className="flex flex-col justify-center">
@@ -41,7 +37,7 @@ const Home = () => {
                                 <div 
                                 className="rounded-2xl p-6 bg-cover bg-center bg-no-repeat relative h-[250px] md:h-[400px] w-full md:w-1/2 cursor-pointer transition-transform duration-300 transform hover:scale-105"
                                 style={{
-                                    backgroundImage: `url(${mapImage})`
+                                    backgroundImage: `url(/map.jpg)`
                                 }}
                                 onClick={() => navigate('/services/map')}
                                 >
@@ -55,7 +51,7 @@ const Home = () => {
                                 <div 
                                 className="rounded-2xl p-6 bg-cover bg-center bg-no-repeat relative h-[250px] md:h-[400px] w-full md:w-1/2 cursor-pointer transition-transform duration-300 transform hover:scale-105"
                                 style={{
-                                    backgroundImage: `url(${datumImage})`
+                                    backgroundImage: `url(/datum.jpg)`
                                 }}
                                 onClick={() => navigate('/services/datum')}
                                 >
@@ -75,7 +71,7 @@ const Home = () => {
             </div>
 
             {/* About Section */}
-            <div id="about" className="w-full min-h-screen px-18 bg-cover bg-no-repeat relative" style={{backgroundImage: `url(${heroImage2})`, backgroundPosition: 'center -100px'}}>
+            <div id="about" className="w-full min-h-screen px-18 bg-cover bg-no-repeat relative" style={{backgroundImage: `url(/heroImage2.png)`, backgroundPosition: 'center -100px'}}>
                 <div className="container grid grid-cols-1 lg:grid-cols-2 mx-auto px-4 h-full py-20 md:py-50">
                     <div className="text-white flex items-center">
                         <div>
