@@ -128,10 +128,8 @@ const About = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 justify-items-center">
                   {/* Supervisor 1 */}
                   <div className="flex flex-col items-center">
-                    <div className="aspect-[4/5] w-36 md:w-50 mb-2 border border-gray-200 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-24 h-24 md:w-32 md:h-32 text-gray-400">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                      </svg>
+                    <div className="aspect-[4/5] w-36 md:w-50 mb-2 border border-gray-200 rounded-lg overflow-hidden bg-gray-100">
+                      <img src="/poerbandono.jpg" alt="Prof. Dr.rer.nat. Poerbandono" className="w-full h-full object-cover" />
                     </div>
                     <h3 className="text-xs md:text-sm font-semibold mb-1 text-center">Prof. Dr.rer.nat. Poerbandono, S.T., M.M.</h3>
                     <p className="text-gray-600 mb-1 text-[10px] md:text-xs text-center">Supervisor 1</p>
@@ -139,10 +137,8 @@ const About = () => {
 
                   {/* Supervisor 2 */}
                   <div className="flex flex-col items-center">
-                    <div className="aspect-[4/5] w-36 md:w-50 mb-2 border border-gray-200 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-24 h-24 md:w-32 md:h-32 text-gray-400">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                      </svg>
+                    <div className="aspect-[4/5] w-36 md:w-50 mb-2 border border-gray-200 rounded-lg overflow-hidden bg-gray-100">
+                      <img src="/gabby.JPG" alt="Gabriella Alodia" className="w-full h-full object-cover" />
                     </div>
                     <h3 className="text-xs md:text-sm font-semibold mb-1 text-center">Gabriella Alodia, S.T., M.Sc., Ph.D.</h3>
                     <p className="text-gray-600 mb-1 text-[10px] md:text-xs text-center">Supervisor 2</p>
@@ -151,9 +147,7 @@ const About = () => {
                   {/* Supervisor 3 */}
                   <div className="flex flex-col items-center">
                     <div className="aspect-[4/5] w-36 md:w-50 mb-2 border border-gray-200 rounded-lg overflow-hidden bg-gray-100 flex items-center justify-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-24 h-24 md:w-32 md:h-32 text-gray-400">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                      </svg>
+                    <img src="/dudywijaya.jpg" alt="Dudy Darmawan Wijaya" className="w-full h-full object-cover" />
                     </div>
                     <h3 className="text-xs md:text-sm font-semibold mb-1 text-center">Dr. techn. Dudy Darmawan Wijaya, S.T, M.Sc.</h3>
                     <p className="text-gray-600 mb-1 text-[10px] md:text-xs text-center">Supervisor 3</p>
