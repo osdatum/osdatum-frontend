@@ -3,13 +3,16 @@ import { signInWithPopup, signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import Swal from 'sweetalert2';
+import LoadingScreen from '../components/LoadingScreen';
 
 export default function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleGoogleLogin = async () => {
+    setLoading(true);
     try {
       const result = await signInWithPopup(auth, googleProvider);
       const idToken = await result.user.getIdToken();
@@ -79,11 +82,14 @@ export default function Login() {
         text: err.message,
         confirmButtonColor: '#2563eb'
       });
+    } finally {
+      setLoading(false);
     }
   };
 
   const handleEmailLogin = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const result = await signInWithEmailAndPassword(auth, email, password);
       const idToken = await result.user.getIdToken();
@@ -124,8 +130,12 @@ export default function Login() {
           confirmButtonColor: '#2563eb'
         });
       }
+    } finally {
+      setLoading(false);
     }
   };
+
+  if (loading) return <LoadingScreen />;
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 to-purple-100">

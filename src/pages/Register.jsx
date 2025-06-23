@@ -2,6 +2,7 @@ import { auth, googleProvider } from '../firebase';
 import { createUserWithEmailAndPassword, updateProfile, signInWithPopup } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import LoadingScreen from '../components/LoadingScreen';
 
 export default function Register() {
   const navigate = useNavigate();
@@ -9,10 +10,12 @@ export default function Register() {
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleRegister = async (e) => {
     e.preventDefault();
     setError('');
+    setLoading(true);
     try {
       // Buat user baru di Firebase
       const result = await createUserWithEmailAndPassword(auth, email, password);
@@ -68,10 +71,13 @@ export default function Register() {
       }
     } catch (err) {
       setError('Register gagal: ' + err.message);
+    } finally {
+      setLoading(false);
     }
   };
 
   const handleGoogleRegister = async () => {
+    setLoading(true);
     try {
       const result = await signInWithPopup(auth, googleProvider);
       const idToken = await result.user.getIdToken();
@@ -93,8 +99,12 @@ export default function Register() {
       }
     } catch (err) {
       setError('Register gagal: ' + err.message);
+    } finally {
+      setLoading(false);
     }
   };
+
+  if (loading) return <LoadingScreen />;
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 to-purple-100">
