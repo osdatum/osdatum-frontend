@@ -385,7 +385,7 @@ export default function DatumCopyPage() {
                       onClick={() => setShowPurchaseModal(true)}
                       className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
                     >
-                      Buy Access ($99.99)
+                      Buy Access (Rp 1.967.041,00)
                     </button>
                   </div>
                 )}
@@ -439,7 +439,7 @@ export default function DatumCopyPage() {
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
             <div className="bg-white p-6 rounded-lg max-w-md w-full">
               <h3 className="text-xl font-bold mb-4">Purchase Grid Access</h3>
-              <p className="mb-4">Get lifetime access to Grid {selectedGrid?.GRID_ID} data for $99.99</p>
+              <p className="mb-4">Get lifetime access to Grid {selectedGrid?.GRID_ID} data for Rp 1.967.041,00</p>
               <div className="flex justify-end space-x-4">
                 <button
                   onClick={() => setShowPurchaseModal(false)}
