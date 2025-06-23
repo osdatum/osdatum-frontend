@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaBars, FaTimes, FaSignInAlt } from "react-icons/fa";
+import LoadingScreen from './LoadingScreen';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,6 +13,7 @@ const Navbar = () => {
 
   const [scroll, setScroll] = useState(false);
   const menuOpenRef = useRef(menuOpen); // Create a ref to store the current state of menuOpen
+  const [loading, setLoading] = useState(false);
 
   // Update the ref whenever menuOpen changes
   useEffect(() => {
@@ -73,13 +75,17 @@ const Navbar = () => {
   let scrollActive = scroll ? "py-6 bg-white shadow" : "py-6";
 
   const handleLogout = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('userData');
-    setIsLoggedIn(false);
-    setUserData(null);
-    setProfileDropdownOpen(false);
-    window.dispatchEvent(new Event('authStateChange'));
-    navigate('/');
+    setLoading(true);
+    setTimeout(() => {
+      localStorage.removeItem('token');
+      localStorage.removeItem('userData');
+      setIsLoggedIn(false);
+      setUserData(null);
+      setProfileDropdownOpen(false);
+      window.dispatchEvent(new Event('authStateChange'));
+      navigate('/');
+      setLoading(false);
+    }, 500);
   };
 
   // Function to validate photo URL
@@ -133,6 +139,8 @@ const Navbar = () => {
       document.removeEventListener('click', handleClickOutside);
     };
   }, []);
+
+  if (loading) return <LoadingScreen />;
 
   return (
     <nav className={`navbar fixed w-full px-4 transition-all bg-gradient-to-r from-[#0b2a5c] to-[#203b77] z-100 ${scrollActive} md:px-18`}>
