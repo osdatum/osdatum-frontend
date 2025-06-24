@@ -117,7 +117,7 @@ export default function UserPage() {
   console.log('Filtered purchasedGridFeatures:', purchasedGridFeatures); // Debug log
 
   return (
-    <div className="min-h-screen bg-gray-100 pt-20">
+    <div className="min-h-screen bg-gray-100 pt-20 md:px-18">
       <div className="container mx-auto px-4 py-8">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-3xl font-bold text-blue-900">User Profile</h1>
@@ -158,21 +158,21 @@ export default function UserPage() {
 
         {/* Subscription Section */}
         <div className="bg-white rounded-lg shadow p-6 mb-8">
-          <h2 className="text-xl font-bold text-blue-900 mb-4">Subscription Status</h2>
+          <h2 className="text-xl font-bold text-blue-900 mb-4">License Status</h2>
           {userData?.access === 'subscription' ? (
             <div className="bg-green-50 p-4 rounded-lg">
-              <p className="text-green-700 font-semibold">Active Subscription</p>
+              <p className="text-green-700 font-semibold">Full Licensed</p>
               <p className="text-green-600">You have full access to all grid data</p>
             </div>
           ) : (
             <div className="bg-yellow-50 p-4 rounded-lg">
-              <p className="text-yellow-700 font-semibold">No Active Subscription</p>
-              <p className="text-yellow-600 mb-4">Subscribe to get full access to all grid data</p>
+              <p className="text-yellow-700 font-semibold">Not Full Access License</p>
+              <p className="text-yellow-600 mb-4">Request to get full access to all grid data</p>
               <button
                 onClick={() => navigate('/subscription')}
                 className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
               >
-                View Subscription Plans
+                Request Access
               </button>
             </div>
           )}

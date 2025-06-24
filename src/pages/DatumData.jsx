@@ -175,7 +175,7 @@ const Datum = () => {
   }
 
   return (
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen md:px-18">
         <main className="flex-1 flex flex-col items-stretch">
           <div className="container mx-auto px-4 py-32">
             <h1 className="text-3xl font-bold text-blue-900 mb-2 tracking-wide">DATUM DATA</h1>
