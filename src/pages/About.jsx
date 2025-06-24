@@ -138,7 +138,7 @@ const About = () => {
                   {/* Supervisor 2 */}
                   <div className="flex flex-col items-center">
                     <div className="aspect-[4/5] w-36 md:w-50 mb-2 border border-gray-200 rounded-lg overflow-hidden bg-gray-100">
-                      <img src="/gabby.JPG" alt="Gabriella Alodia" className="w-full h-full object-cover" />
+                      <img src="/alodia.png" alt="Gabriella Alodia" className="w-full h-full object-cover" />
                     </div>
                     <h3 className="text-xs md:text-sm font-semibold mb-1 text-center">Gabriella Alodia, S.T., M.Sc., Ph.D.</h3>
                     <p className="text-gray-600 mb-1 text-[10px] md:text-xs text-center">Supervisor 2</p>
